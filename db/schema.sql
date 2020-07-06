@@ -1,16 +1,16 @@
 DROP DATABASE IF EXISTS burgers_db;
-Create DATABASE burgers_db;
+
+-- create burgers database
+CREATE DATABASE burgers_db;
+
 USE burgers_db;
 
+-- create burgers table
 CREATE TABLE burgers
 (
-
-    id INT
-    AUTO_INCREMENT NOT NULL,
-burger_name VARCHAR
-    (255),
-devoured BOOLEAN DEFAULT false,
-PRIMARY KEY
-    (id)
-
+    id int NOT NULL AUTO_INCREMENT,
+    burger_name VARCHAR(300) NOT NULL,
+    -- creates a boolean column called "devoured" and returns false by default if nothing is entered 
+    devoured  BOOLEAN DEFAULT false,
+    PRIMARY KEY (id)
 );
