@@ -17,7 +17,7 @@ if (process.env.JAWSDB_URL) {
         password: "calista21 ",
         database: "burgers_db"
     });
-}
+};
 
 
 // Connecting to the database.
