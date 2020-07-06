@@ -19,6 +19,6 @@ const burger = {
             cb(res);
         });
     }
-},
+};
 
-    module.exports = burger;
+module.exports = burger;
