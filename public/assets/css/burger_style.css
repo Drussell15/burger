@@ -15,7 +15,7 @@ h1,h3,h4{
 
 body {
     text-align: center;
-    background-color: : rgb(245,245,245);
+    background-color:rgb(245,245,245);
     margin-top: 30px;
     color: 141414;
     font-family: Veranda, Geneva, sans-serif
@@ -25,5 +25,5 @@ body {
     font-weight: bold;
 }
 .burgListDev {
-    background-color: : (243, 221, 180);
+    background-color: rgb(243, 221, 180);
 }
