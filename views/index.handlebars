@@ -1,5 +1,6 @@
 <div class="container">
     <h1> Bubba Boston's Burger Eater</h1>
+
     <div class="row">
         <div class="col-md-6">
             <h3> Bubba's burgers currently available</h3>
@@ -15,12 +16,15 @@
                 {{/each}}
             </ul>
         </div>
+
         <div class="col-md-6">
             <h3> Burgers Devoured:</h3>
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
+
                 <li class="burgListDev">{{burger_name}}</li>
+
                 {{/if}}
                 {{/each}}
 
@@ -36,8 +40,10 @@
                 <label for "burg">Burger Name:</label>
                 <input type="text" id="burg">
             </div>
+
             <button type="submit" id="addBurger" class="btn-warning">Add Burger</button>
         </form>
+
     </div>
 
 </div>
@@ -50,7 +56,7 @@
 
         //create new burger variable
         const newBurger = {
-            burger_name: $("#burg").val(0.trim(),
+            burger_name: $("#burg").val().trim(),
                 devoured: 0
     };
 

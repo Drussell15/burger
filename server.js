@@ -5,21 +5,27 @@ const express = require("express");
 
 // Sets up the Express App
 // =============================================================
-const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const app = express();
 
 // Static directory to be served
-app.use(express.static("app/public"));
+app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+//set handlebars.
+const exphbs= require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
+const routes = require("./controllers/burgers_controller");
 
-// Here we introduce HTML routing to serve different HTML files
-require("./app/routes/html-routes.js")(app);
+app.use(routes);
 
 // Starts the server to begin listening
 // =============================================================

@@ -1,21 +1,17 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
-
 // Requiring mysql package
 const mysql = require("mysql");
 
 // Setting up our connection information
 if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
     var connection = mysql.createConnection({
-        source: "heroku",
-        host: "k2fqe1if4c7uowsh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    
+        host: "localhost",
         port: 3306,
-        user: "r28zs8s2zq5kjdws",
-        password: "tz2mopvfi1k5069z",
-        database: "ullv9aurpv16vhsw"
+        user: "root",
+        password: "calista21 ",
+        database: "burgers_db "
     });
 };
 

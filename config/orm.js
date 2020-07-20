@@ -1,7 +1,7 @@
 const connection = require("../config/connection.js");
 
 function createQmarks(num) {
-    let arr = [];
+    const arr = [];
 
     for (let i = 0; i < num; i++) {
         arr.push("?");
@@ -10,7 +10,7 @@ function createQmarks(num) {
 }
 
 function objToSql(ob) {
-    let arr = [];
+    const arr = [];
     //loop through keys and push key/vaules as string into array
     for (let key in ob) {
         const value = ob[key];
@@ -23,11 +23,11 @@ function objToSql(ob) {
     }
     return arr.toString();
 };
-//object for all sql statemetn functions:
+
+//object for all sql statement functions:
 const orm = {
     selectAll: function (tableInput, cb) {
         const queryString = "SELECT * FROM ??";
-
         connection.query(queryString, [tableInput], function (err, res) {
             if (err) {
                 throw err;
@@ -42,7 +42,7 @@ const orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += printQMarks(vals.length);
         queryString += ") ";
 
 
@@ -61,6 +61,7 @@ const orm = {
 
         queryString += "SET";
         queryString += objToSql(objColVals);
+        queryString += "WHERE ";
         queryString += condition;
 
 
@@ -72,7 +73,7 @@ const orm = {
             cb(result);
         });
     }
-    );
+    };
 
 //export object for model (burger.js)
 module.exports = orm;
